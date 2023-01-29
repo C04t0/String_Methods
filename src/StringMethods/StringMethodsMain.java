@@ -42,15 +42,21 @@ public class StringMethodsMain {
         String x = "Hottentottententententoonstelling";
         System.out.println(x);
         char[] char_x = x.toCharArray();
-        char ch = 't';
+        char ch;
         int count = 0;
-        for(int i=0; i<char_x.length; i++) {
-            if (ch == char_x[i]) {
-                count++;
+        for (ch ='a'; ch<='z';ch++ ) {
+            char[] alfabet = new char[ch];
+                for (int i = 0; i < char_x.length; i++) {
+                    if (ch == alfabet[ch]) {
+                        if (ch == char_x[i]) {
+                            count++;
+                            break;
+                        }
+                    }
+                }
+            System.out.println("Aantal keer " + ch + ": " + count);
             }
         }
-        System.out.println("Aantal keer " + ch + ": " + count);
-    }
 
 
     public static void Sub() {
