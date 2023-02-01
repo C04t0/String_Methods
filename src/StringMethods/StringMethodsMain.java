@@ -23,8 +23,8 @@ public class StringMethodsMain {
 
     public static void main(String[] args) {
         //Remove();
-        //alfabet(x);
-        Sub();
+        alfabet(x);
+        //Sub();
         //AltSub();
 
     }
@@ -53,14 +53,11 @@ public class StringMethodsMain {
             if (x.charAt(i) == char_x[i]) {
                 found++;
             }
-            if (found >= 1) {
+            if (found != 0) {
                 System.out.println("Aantal keer letter " + x.charAt(i) + ": " + count[x.charAt(i)]);
             }
         }
-
-
     }
-
     public static void Sub() {
         String x = "Python is very cool and handy.";
         System.out.println(x);
@@ -69,17 +66,14 @@ public class StringMethodsMain {
         if (x.contains(whatToReplace)) {
             String newX = x.replace(whatToReplace, replacement);
             System.out.println(newX);
-
         }
     }
-
-
-        public static String AltSub () {
-            String repl = "Jeremy Bearemy is cool";
-            System.out.println(repl);
-            String result = repl.replace("cool", "not so cool");
-            System.out.println(result);
-            return result;
-        }
+    public static String AltSub () {
+        String repl = "Jeremy Bearemy is cool";
+        System.out.println(repl);
+        String result = repl.replace("cool", "not so cool");
+        System.out.println(result);
+        return result;
     }
+}
 
