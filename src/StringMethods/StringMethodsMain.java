@@ -18,9 +18,11 @@ package StringMethods;
 import java.util.Scanner;
 
 public class StringMethodsMain {
+
+    public static String x = "Hottentottententententoonstelling";
     public static void main(String[] args) {
         //Remove();
-        alfabet();
+        alfabet(x);
         //Sub();
         //AltSub();
 
@@ -38,39 +40,34 @@ public class StringMethodsMain {
         return result;
     }
 
-    public static void alfabet() {
-        String x = "Hottentottententententoonstelling";
-        System.out.println(x);
-        char[] char_x = x.toCharArray();
+    public static void alfabet(String x) {
         char ch;
-        int count = 0;
-        for (ch ='a'; ch<='z';ch++ ) {
-            char[] alfabet = new char[ch];
-                for (int i = 0; i < char_x.length; i++) {
-                    if (ch == alfabet[ch]) {
-                        if (ch == char_x[i]) {
-                            count++;
-                            break;
-                        }
-                    }
-                }
-            System.out.println("Aantal keer " + ch + ": " + count);
+        int found = 0;
+        int[] count = new int[256];
+        char[] char_x = x.toCharArray();
+        for (int i = 0; i < char_x.length; i++) {
+            count[x.charAt(i)]++;
+        }
+        for (int i = 0; i < char_x.length; i++) {
+            if (x.charAt(i) == char_x[i]) {
+                found++;
+            }
+            if (found >= 1){
+                System.out.println("Aantal keer letter " + x.charAt(i) + ": " + count[x.charAt(i)]);
             }
         }
 
 
+    }
+
+
+
     public static void Sub() {
-        Scanner keyboard = new Scanner(System.in);
-        System.out.print("Geef een string: ");
-        String x = keyboard.next();
-        char [] char_a = x.toCharArray();
-        String subStr  = x.substring(4, 10);
-        System.out.println(subStr);
-        System.out.print("Geef een string ter vervanging: ");
-        String sub = keyboard.next();
-        String result = x.replace(subStr, sub);
-        System.out.print(result);
-        keyboard.close();
+        String x = "Python is very cool";
+        System.out.println(x);
+        String newX = x.replace("Python", "Java");
+        System.out.println(newX);
+
     }
 
 
