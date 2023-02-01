@@ -20,10 +20,11 @@ import java.util.Scanner;
 public class StringMethodsMain {
 
     public static String x = "Hottentottententententoonstelling";
+
     public static void main(String[] args) {
         //Remove();
-        alfabet(x);
-        //Sub();
+        //alfabet(x);
+        Sub();
         //AltSub();
 
     }
@@ -52,7 +53,7 @@ public class StringMethodsMain {
             if (x.charAt(i) == char_x[i]) {
                 found++;
             }
-            if (found >= 1){
+            if (found >= 1) {
                 System.out.println("Aantal keer letter " + x.charAt(i) + ": " + count[x.charAt(i)]);
             }
         }
@@ -60,14 +61,16 @@ public class StringMethodsMain {
 
     }
 
-
-
     public static void Sub() {
-        String x = "Python is very cool";
+        String x = "Python is very cool and handy.";
         System.out.println(x);
-        String newX = x.replace("Python", "Java");
-        System.out.println(newX);
+        String replacement = "Java";
+        String whatToReplace = "Python";
+        if (x.contains(whatToReplace)) {
+            String newX = x.replace(whatToReplace, replacement);
+            System.out.println(newX);
 
+        }
     }
 
 
@@ -79,3 +82,4 @@ public class StringMethodsMain {
             return result;
         }
     }
+
